@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+    <script>
+    function validate()
+        {
+            var email,password;
+            var paswd=/(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[!@#$%^&*()+=-\?;,./{}|\":<>\[\]\\\' ~_]).{8,}/;
+
+            email=document.form1.email;
+            password=document.form1.password;
+           
+            if(email.value=="")
+            {
+                alert('email cannot be blank');
+                return false;
+            }
+            
+            if(password.value.match(paswd))
+            {
+                alert('correct..');
+                return true;
+            }
+            else{
+                alert('wrong,try again!...');
+                return false;
+            }
+          
+        }
+    </script>
+</head>
+<body>
+    <!-- login form starts -->
+    <div class="bg-img" id="book">
+        <div class="content">
+           <header> <span style="color:black ;">Login form</span> </header>
+           <form action="#" name="form1" onsubmit="validate();">
+              <div class="field">
+
+                 <span class="fa fa-user"></span>
+                 <input type="email" name="email" id="email" placeholder="Email or Phone">
+              </div>
+              <div class="field space">
+                 <span class="fa fa-lock"></span>
+                 <input type="password" class="pass-key" name="password" id="password" placeholder="Password">
+                 <span class="show">SHOW</span>
+              </div>
+              <div class="pass">
+                 <a href="#">Forgot Password?</a>
+              </div>
+              <div class="field">
+                 <input type="submit" value="LOGIN">
+              </div>
+           </form>
+           <div class="login">
+              Or login with
+           </div>
+           <div class="links">
+              <div class="facebook">
+                <i class="fa-brands fa-facebook"><span>facebook</span></i>
+              </div>
+              <div class="instagram">
+                 <i class="fab fa-instagram"><span>Instagram</span></i>
+              </div>
+           </div>
+           <div class="signup">
+              Don't have account?
+              <a href="#">Signup Now</a>
+           </div>
+        </div>
+     </div>
+    
+
+<!-- login form end -->
+
+</body>
+</html>
